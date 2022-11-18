@@ -1,0 +1,5 @@
+Pagina para utilizar plantillas CSS
+
+https://bootswatch.com/
+
+/* se elige la plantilla y se descarga el archivo.css, luego se vincula con el html */
