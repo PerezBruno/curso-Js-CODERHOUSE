@@ -19,7 +19,7 @@ function iniciarCompra(par1) {
     
 Vallamos a pedir algo para comer!`);
   }
-  comensales = (prompt("Cuantos comensales??"));
+  comensales = (prompt("Cuantos comensales??")); /// define cuantas veces se va a repetir el bucle
   while (i <= comensales) {
     tipoDeComida();
     i++;
@@ -30,7 +30,8 @@ Vallamos a pedir algo para comer!`);
 }
 
 
-//selecciona el tipo de pedido
+//selecciona el tipo de comida*****
+
 function tipoDeComida() {
   pedido = prompt(`
 Menú ${i} de ${comensales}
@@ -170,7 +171,8 @@ function pizza() {
   }
 }
 
-//permite sumar gaseosa al pedido
+//permite sumar gaseosa al pedido*****
+
 function gaseosa() {
   conBebida = prompt(`Queres sumarle gaseosa?
     1 - Si, por favor!
@@ -184,7 +186,6 @@ function gaseosa() {
     case "2":
       bebida = " sin bebida";
       pedidoCompleto();
-      //papas();
       break;
     case "v":
       tipoDeComida();
@@ -197,7 +198,8 @@ function gaseosa() {
   }
 }
 
-//selecciona el tipo de bebida
+//elegimos el tipo de bebida****
+
 function tipoDeBebida() {
   bebida = prompt(`1 - Coca cola 500 cc
     2 - Sprite 500 cc
@@ -217,23 +219,15 @@ function tipoDeBebida() {
   } else;
   switch (bebida) {
     case " 1 Coca de 500 cc":
-      //alert(`Sale con una ${bebida}!`);
-      //papas();
       pedidoCompleto();
       break;
     case " 1 Sprite de 500 cc":
-      //alert(`Sale con una ${bebida}!`);
       pedidoCompleto();
-      //papas();
       break;
     case " 1 Fanta de 500 cc":
-      //alert(`Sale con una ${bebida}!`);
-      //papas();
       pedidoCompleto();
       break;
     case " 1 Agua de 500 cc":
-      //alert(`Sale con un ${bebida}!`);
-      //papas();
       pedidoCompleto();
       break;
     case "v":
@@ -246,24 +240,13 @@ function tipoDeBebida() {
   }
 }
 
-//permite sumar papas al pedido
-// function papas() {
-//   if (j == 0){
-//     papasExtra = "+ una porción papas sin cargo por ser tu primer compra!"
-//     alert("Van de regalo unas papas por ser tu primer compra!!!");
-//     pedidoCompleto()
-//     j++;
-//     console.log(j)
-//   }else
-//   pedidoCompleto()
-// }
 
+//  agrego el pedido de cada comensal a un array ******************
 function pedidoCompleto() {
   resumen.push(pedido + bebida);
-  // confirma = prompt(`${clienteNombre}, tu pedido quedó compuesto por:
-  //  ${pedido}
-  //  ${bebida}
 }
+
+//muestra el pedido y solicita confirmación *****************
 function confirmaPedido() {
   confirma = prompt(`
     ${clienteNombre}, tu pedido quedó compuesto por:
@@ -273,15 +256,19 @@ function confirmaPedido() {
     
     Para cancelar presiona la "c"`);
   if (confirma == "1") {
-    alert("Excelente!!! La próxima clase ajustamos el resto de los detalles!");
+    alert(`Excelente ${clienteNombre}!!! 
+    
+  La próxima clase ajustamos el resto de los detalles!`);
   } else if (confirma == "c") {
     reinicio();
   } else {
     alert("la opción ingresada no es válida");
-    pedidoCompleto();
+    confirmaPedido();
   }
 }
 
+
+//reinicia las variables y prepara el programa para iniciar un nuevo pedido ************
 function reinicio() {
   i = 1;
   resumen = [];
