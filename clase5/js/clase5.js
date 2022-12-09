@@ -90,10 +90,39 @@ function SeguroAuto(marca, modelo, clase, valorMercado, condicion){
     this.clase = clase;
     this.valorMercado = valorMercado;
     this.condicion = condicion;
-    this.cobertura = 100;
+    this.cobertura = 10;
     this.autorizado = true;
 }
 
-const clienteX023 = new SeguroAuto("Ford", "Mustang GT Premium", 2022, 43000, "Optima");
+// const clienteX023 = new SeguroAuto("Ford", "Mustang GT Premium", 2022, 43000, 0);
 
-console.log(clienteX023)
+// console.log(clienteX023)
+
+
+let nombreCliente;
+let marca;
+let modelo;
+let clase;
+let valorMercado;
+let condicion;
+
+
+
+nombreCliente = prompt("ingresa un nombre");
+
+alert(`Hola ${nombreCliente}! vas a asegurar un automovil.`)
+
+marca = prompt("Qué marca es?")
+modelo = prompt("Modelo?")
+clase = prompt("De que año es?")
+valorMercado = prompt("Cuál es su valor de mercado?")
+condicion = prompt(`Cual es su condición?:
+0 - Óptima;
+1 - Aceptable;
+2 - Deteriorado`)
+
+
+const prueba1 = new SeguroAuto(marca, modelo, clase, valorMercado, condicion);
+
+prompt(`Detalles del vehículo a asegurar:
+${prueba1}`) //falta que el objeto aparezca en el prompt
