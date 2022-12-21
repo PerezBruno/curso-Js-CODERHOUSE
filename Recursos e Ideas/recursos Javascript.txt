@@ -8,3 +8,7 @@ https://bootswatch.com/
 Página para buscar métodos
 
 https://developer.mozilla.org/es/
+
+pagina para copiar enlaces de recursos externos
+
+https://cdnjs.com/libraries/font-awesome   (este es de fontawesome)
